@@ -23,7 +23,7 @@ This is a solution to the [3-column preview card component challenge on Frontend
 
 ### Links
 
-- Live Site URL: [projects.jagur.dev/frontendmentor/3-column-preview-card-component-main](https://projects.jagur.dev/frontendmentor/3-column-preview-card-component-main)
+- Live Site URL: [frontendmentor.jagur.dev/3-column-preview-card-component](https://frontendmentor.jagur.dev/3-column-preview-card-component)
 
 ## My process
 

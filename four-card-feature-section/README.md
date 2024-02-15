@@ -23,7 +23,7 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 
 ### Links
 
-- Live Site URL: [projects.jagur.dev/frontendmentor/four-card-feature-section-master](https://projects.jagur.dev/frontendmentor/four-card-feature-section-master)
+- Live Site URL: [frontendmentor.jagur.dev/four-card-feature-section](https://frontendmentor.jagur.dev/four-card-feature-section)
 
 ## My process
 
