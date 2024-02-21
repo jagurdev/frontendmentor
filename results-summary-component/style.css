@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap');
+
+:root {
+	/* HSL VALUES */
+	--light-red-hsl: 0, 100%, 67%;
+	--orangey-yellow-hsl: 39, 100%, 56%;
+	--green-teal-hsl: 166, 100%, 37%;
+	--cobalt-blue-hsl: 234, 85%, 45%;
+
+	--light-slate-blue-hsl: 252, 100%, 67%;
+	--light-royal-blue-hsl: 241, 81%, 54%;
+	--violet-blue-hsla: 256, 72%, 46%, 1;
+	--persian-blue-hsla: 241, 72%, 46%, 0;
+
+	--pale-blue-hsl: 221, 100%, 96%;
+	--light-lavender-hsl: 241, 100%, 89%;
+	--dark-gray-blue-hsl: 224, 30%, 27%;
+
+	/* SURFACE & TEXT COLORS */
+	--surface-1: white;
+	--surface-2: hsl(var(--pale-blue-hsl));
+
+	--text-1: hsl(var(--dark-gray-blue-hsl));
+	--text-2: hsl(from var(--text-1) h s l / 50%);
+
+	/* BRAND COLORS & GRADIENTS */
+	--brand-light: hsl(var(--light-lavender-hsl));
+	--gradient-1: linear-gradient(hsl(var(--light-slate-blue-hsl)), hsl(var(--light-royal-blue-hsl)));
+	--gradient-2: linear-gradient(hsl(var(--violet-blue-hsla)), hsl(var(--persian-blue-hsla)));
+
+	/* ACCENT COLORS */
+	--accent-red: hsl(var(--light-red-hsl));
+	--accent-yellow: hsl(var(--orangey-yellow-hsl));
+	--accent-green: hsl(var(--green-teal-hsl));
+	--accent-blue: hsl(var(--cobalt-blue-hsl));
+	--opacity-accent: 8%;
+	--surface-red: hsl(from var(--accent-red) h s l / var(--opacity-accent));
+	--surface-yellow: hsl(from var(--accent-yellow) h s l / var(--opacity-accent));
+	--surface-green: hsl(from var(--accent-green) h s l / var(--opacity-accent));
+	--surface-blue: hsl(from var(--accent-blue) h s l / var(--opacity-accent));
+
+	/* SIZES */
+  --s-4: clamp(0.1975rem, 0.1801rem + 0.0742cqi, 0.2469rem);
+  --s-3: clamp(0.2963rem, 0.2702rem + 0.1113cqi, 0.3704rem);
+  --s-2: clamp(0.4444rem, 0.4053rem + 0.1669cqi, 0.5556rem);
+  --s-1: clamp(0.6667rem, 0.608rem + 0.2504cqi, 0.8333rem);
+  --s0: clamp(1rem, 0.912rem + 0.3756cqi, 1.25rem);
+  --s1: clamp(1.5rem, 1.368rem + 0.5634cqi, 1.875rem);
+  --s2: clamp(2.25rem, 2.0519rem + 0.8451cqi, 2.8125rem);
+  --s3: clamp(3.375rem, 3.0779rem + 1.2676cqi, 4.2188rem);
+  --s4: clamp(5.0625rem, 4.6169rem + 1.9014cqi, 6.3281rem);
+
+	/* FONT FAMILY */
+	--font-sans: "Hanken Grotesk", sans-serif;
+
+	/* FONT WEIGHTS */
+	--font-weight-base: 500;
+	--font-weight-boldish: 700;
+	--font-weight-bold: 800;
+
+	/* FONT SIZES */
+	--font-size-base: 1rem;
+	--font-size-biggish: 1.2rem;
+	--font-size-big: var(--s1);
+	--font-size-huge: var(--s3);
+
+	/* MAXIMUM MEASURE OF CONTENT */
+	--measure: 36ch;
+}
+
+
+/** RESET **/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	margin-inline: auto;
+}
+
+/* Nuke all of the fonts and margins in favor of authored CSS */
+* {
+	font: inherit;
+	margin: 0;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+	text-wrap: balance;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Nuke button defaults */
+button {
+  border: none; 
+}
+/** END RESET **/
+
+
+/** GLOABL **/
+
+/* HTML */
+html {
+	font-family: var(--font-sans);
+	color: var(--text-1);
+	background-color: var(--surface-1);
+}
+
+/* Text */
+h2 {
+	font-size: var(--font-size-biggish);
+	font-weight: var(--font-weight-boldish);
+}
+
+/** COMPOSITION **/
+
+/* Cover */
+.cover {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 100vh;
+	gap: 1rem;
+	padding-block: 1rem;
+}
+
+.cover > :first-child {
+	margin-block: auto;
+}
+
+/* Center-box */
+.center-box {
+	--border-radius: var(--s1);
+  max-inline-size: calc(var(--measure) * 2);
+	border-radius: var(--border-radius);
+}
+
+/* Switcher */
+.switcher {
+	--threshold: 35rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap, --s1);
+}
+
+.switcher > * {
+	flex-grow: 1;
+	flex-basis: calc((var(--threshold, 30rem) - 100%) * 999);
+}
+
+/* Card */
+.card {
+	padding: var(--s2);
+	padding-block-start: var(--s1);
+	border-radius: var(--border-radius, 1rem);
+}
+
+/* Stack */
+.stack {
+	--gap: var(--s1);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; 
+	gap: var(--gap, 1.5rem);
+}
+
+.stack:only-child {
+	block-size: 100%;
+}
+
+/* Box-sm */
+.box-sm {
+	padding: var(--s0);
+	border-radius: var(--s-2);
+}
+
+/* Cluster */
+.cluster {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap, 1rem);
+	justify-content: space-between;
+	align-items: center;
+}
+
+/** UTILITIES **/
+
+/* Text */
+.text-align\:center {
+	text-align: center;
+}
+
+/* Font */
+.font\:big {
+	font-size: var(--font-size-big);
+	font-weight: var(--font-weight-boldish);
+}
+
+.font\:huge {
+	font-size: var(--font-size-huge);
+	font-weight: var(--font-weight-bold);
+}
+
+.boldish {
+  font-weight: var(--font-weight-boldish);
+}
+
+/* Flex & Grid */
+.align-self\:center {
+  align-self: center;
+}
+
+.align-items\:center {
+	align-items: center;
+}
+
+.justify-content\:center {
+	justify-content: center;
+}
+
+/* Box shadow */
+.box-shadow {
+  box-shadow: 10px 25px 20px 10px var(--surface-2);
+}
+
+/* Icon */
+.icon {
+	width: 1.5cap;
+	height: 1.5cap;
+}
+
+.with-icon {
+	display: inline-flex;
+	align-items: center;
+
+	> .icon {
+		margin-inline-end: var(--s-1);
+	}
+}
+
+/* Color */
+.color\:brand {
+	color: var(--brand-light);
+}
+
+.color\:surface {
+	color: var(--surface-1);
+}
+
+.color\:red {
+	color: var(--accent-red);
+}
+
+.color\:yellow {
+	color: var(--accent-yellow);
+}
+
+.color\:green {
+	color: var(--accent-green);
+}
+
+.color\:blue {
+	color: var(--accent-blue);
+}
+
+.color\:secondary {
+  color: var(--text-2);
+}
+
+/* Backgrounds */
+.bg-purple {
+	background: var(--gradient-1);
+}
+
+.bg-gradient {
+  background: var(--gradient-2);
+}
+
+.bg-text {
+  background: var(--text-1);
+}
+
+.bg-red {
+	background: var(--surface-red);
+}
+
+.bg-yellow {
+	background: var(--surface-yellow);
+}
+
+.bg-green {
+	background: var(--surface-green);
+}
+
+.bg-blue {
+	background: var(--surface-blue);
+}
+
+/* Spacing */
+.gap\:0 {
+	--gap: 0;
+}
+
+.gap\:sm {
+	--gap: var(--s-1);
+}
+
+
+/** BLOCKS **/
+
+/* Circle */
+.circle {
+	shape-outside: circle();
+	clip-path: circle();
+	block-size: 100%;
+	inline-size: 100%;
+	min-block-size: 16ch;
+}
+
+/* Button */
+button {
+  padding: var(--s0);
+  border-radius: 100vw;
+
+  &:hover {
+	  cursor: pointer;
+	  background: var(--gradient-1);
+  }
+}
+
+.attribution {
+	font-size: 0.666rem;
+	text-align: center;
+
+	& a {
+		color: slateblue;
+	}
+}

@@ -1,47 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Results summary component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
 
-  Your Result
-  76
-  of 100
+<body class="cover">
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
+  <article role="main" class="center-box | align-self:center box-shadow">
+    <div class="switcher">
 
-  Reaction
-  80 / 100
+      <section class="card | color:brand bg-purple">
+        <div class="stack | text-align:center align-items:center">
+          <h2>Your Result</h2>
+          <div class="circle | bg-gradient">
+            <p class="stack | justify-content:center gap:0"><span class="font:huge color:surface">76</span>of 100</p>
+          </div>
+          <p class="font:big color:surface">Great</p>
+          <p>You scored higher than 65% of the people who have taken these tests.</p>
+        </div>
+      </section>
 
-  Memory
-  92 / 100
 
-  Verbal
-  61 / 100
+      <section class="card">
+        <div class="stack">
+          <h2>Summary</h2>
 
-  Visual
-  72 / 100
+          <dl class="stack | gap:sm">
+            <div class="box-sm | bg-red">
+              <div class="cluster">
+                <dt class="with-icon | color:red">
+                  <svg class="icon">
+                    <use href="/assets/images/icon-reaction.svg#bolt" />
+                  </svg>
+                  Reaction
+                </dt>
+                <dd class="boldish">80<span class="color:secondary"> / 100</span> </dd>
+              </div>
+            </div>
+            <div class="box-sm | bg-yellow">
+              <div class="cluster">
+                <dt class="with-icon | color:yellow">
+                  <svg class="icon">
+                    <use href="/assets/images/icon-memory.svg#brain" />
+                  </svg>
+                  Memory
+                </dt>
+                <dd class="boldish">92<span class="color:secondary"> / 100</span> </dd>
+              </div>
+            </div>
+            <div class="box-sm | bg-green">
+              <div class="cluster">
+                <dt class="with-icon | color:green">
+                  <svg class="icon">
+                    <use href="/assets/images/icon-verbal.svg#chat" />
+                  </svg>
+                  Verbal
+                </dt>
+                <dd class="boldish">61<span class="color:secondary"> / 100</span> </dd>
+              </div>
+            </div>
+            <div class="box-sm | bg-blue">
+              <div class="cluster">
+                <dt class="with-icon | color:blue">
+                  <svg class="icon">
+                    <use href="/assets/images/icon-visual.svg#eye" />
+                  </svg>
+                  Visual
+                </dt>
+                <dd class="boldish">72<span class="color:secondary"> / 100</span> </dd>
+              </div>
+            </div>
+          </dl>
 
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+          <button class="bg-text color:surface">Continue</button>
+        </div>
+      </section>
+
+    </div>
+  </article>
+
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://jagur.dev">jose</a>.<p>
+  </footer>
 </body>
+
 </html>
